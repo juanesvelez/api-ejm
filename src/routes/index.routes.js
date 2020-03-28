@@ -1,4 +1,4 @@
 
-module.exports{
+module.exports = {
     HomeRoutes: require('./home.routes')
 }

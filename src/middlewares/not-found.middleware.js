@@ -1,0 +1,1 @@
+module.exports = (req , res, next) => res.status(404).send({status : 400, message: "Resource not found"})
