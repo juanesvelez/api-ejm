@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-const { Schema  } = require("mongoose")
+const { Schema  } = mongoose;
 const { compareSync, hashSync , genSaltSync  } = require("bcryptjs")
 
 const UserSchema =  new Schema({
@@ -9,8 +9,8 @@ const UserSchema =  new Schema({
     email: {type : String , required: true}
 });
 
-UserSchema.methods.toJson = function(){
-    let user = this.toObject(),
+UserSchema.methods.toJson = function() {
+    let user = this.toObject();
     delete user.password;
     return user;
 }
