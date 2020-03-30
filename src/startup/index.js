@@ -1,27 +1,25 @@
-const express = require('express');
+const express = require("express");
 
 let _express = null;
 let _config = null;
 
-class Server{
-    constructor({config , router}){
-        _config = config;
-        _express = express().use(router);
+class Server {
+  constructor({ config, router }) {
+    _config = config;
+    _express = express().use(router);
+  }
 
-    }
+  start() {
+    return new Promise(resolve => {
+      _express.listen(_config.PORT, () => {
+        console.log(
+          _config.APPLICATION_NAME + " API running on port " + _config.PORT
+        );
 
-    start(){
-        return new Promise(resolve =>{
-            _express.listen(_config.PORT, ()=>{
-                console.log(_config.APPLICATION_NAME +  "Running on port " + _config.PORT
-                );
-                
-                resolve();
-            })
-        })
-    }
+        resolve();
+      });
+    });
+  }
 }
 
 module.exports = Server;
-
-

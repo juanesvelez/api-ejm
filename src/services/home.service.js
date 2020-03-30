@@ -1,9 +1,9 @@
-class homeService{
-    index(){
-        return{
-            message: "Hello World"
-        }
-    }
+class HomeService {
+  index() {
+    return {
+      message: "Hello World!"
+    };
+  }
 }
 
-module.exports= homeService;
+module.exports = HomeService;
